@@ -6,7 +6,7 @@
 /*   By: tarzan <elakhfif@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 02:10:19 by tarzan            #+#    #+#             */
-/*   Updated: 2024/06/11 07:55:54 by elakhfif         ###   ########.fr       */
+/*   Updated: 2024/06/11 22:49:23 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,8 @@ static void	finder(double x_step, double y_step, t_ray *player, t_map *game)
 	}
 }
 
+//if something is wrong, change return of hstep bye this:
+//set [hstep.horizontal = true;] then [retuen hstep;]
 t_ray	cast_ray(t_map *game, double fov)
 {
 	t_ray	hinter;
@@ -70,16 +72,15 @@ t_ray	cast_ray(t_map *game, double fov)
 	hinter = horizontal_intercept(game, fov, hinter);
 	vstep = vertical_intercept(game, fov, pinter);
 	hstep = horizontal_intercept(game, fov, hinter);
-	finder(vstep.ray_x - pinter.ray_x, vstep.ray_y - pinter.ray_y, &vstep, game);
-	finder(hstep.ray_x - hinter.ray_x, hstep.ray_y - hinter.ray_y, &hstep, game);
+	finder(vstep.ray_x - pinter.ray_x, vstep.ray_y - pinter.ray_y,
+		&vstep, game);
+	finder(hstep.ray_x - hinter.ray_x, hstep.ray_y - hinter.ray_y,
+		&hstep, game);
 	vstep.distance = sqrt(pow(vstep.ray_x - game->player.px * BLOCK_SIZE, 2)
 			+ pow(vstep.ray_y - game->player.py * BLOCK_SIZE, 2));
 	hstep.distance = sqrt(pow(hstep.ray_x - game->player.px * BLOCK_SIZE, 2)
 			+ pow(hstep.ray_y - game->player.py * BLOCK_SIZE, 2));
 	if ((hstep.distance < vstep.distance))
-	{
-		hstep.horizontal = true;
-		return (hstep);
-	}
+		return (hstep.horizontal = true, hstep);
 	return (vstep);
 }

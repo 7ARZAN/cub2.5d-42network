@@ -6,12 +6,13 @@
 /*   By: elakhfif <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 07:04:34 by elakhfif          #+#    #+#             */
-/*   Updated: 2024/06/11 08:26:16 by elakhfif         ###   ########.fr       */
+/*   Updated: 2024/06/11 23:14:16 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCTS_H
 # define STRUCTS_H
+
 # include "./MLX42/MLX42/MLX42.h"
 
 typedef struct	s_coords

@@ -6,7 +6,7 @@
 /*   By: elakhfif <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 06:16:50 by elakhfif          #+#    #+#             */
-/*   Updated: 2024/06/11 22:32:34 by elakhfif         ###   ########.fr       */
+/*   Updated: 2024/06/11 23:15:03 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include "./structs.h"
 
 # define BLOCK_SIZE 32
-# define WINDOW_X 800
+# define WINDOW_X 1200
 # define WINDOW_Y 800
 # define FOV 60
 # define ROTATION_SPEED 1.4f

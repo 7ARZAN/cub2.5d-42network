@@ -6,18 +6,18 @@
 /*   By: tarzan <elakhfif@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 22:40:37 by tarzan            #+#    #+#             */
-/*   Updated: 2024/06/11 07:56:14 by elakhfif         ###   ########.fr       */
+/*   Updated: 2024/06/11 22:10:27 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-static void	draw_vertical_line(t_map *game, double x, double y0, double y1, int color)
+static void	draw_vertical_line(t_map *game, double x, double* coords, int color)
 {
-	int	y;
+	double	y;
 
-	y = y0;
-	while (y < y1)
+	y =  coords[0];
+	while (y < coords[1])
 	{
 		if (y > 0 && y < WINDOW_Y)
 			mlx_put_pixel(game->img, x, y, color);
@@ -43,6 +43,7 @@ static void	draw_with_texture_mapping(t_map *game, t_ray ray, int x, t_pxl pxl)
 	int		tx;
 	int		index;
 	int		color;
+	double	coords[2];
 
 	tx = 0;
 	index = -1;
@@ -53,8 +54,10 @@ static void	draw_with_texture_mapping(t_map *game, t_ray ray, int x, t_pxl pxl)
 		tx = (int)ray.ray_y % BLOCK_SIZE;
 	while (++index < BLOCK_SIZE)
 	{
+		coords[0] = pxl.starty;
+		coords[1] = pxl.starty + tstep;
 		color = game->texture_pixels[BLOCK_SIZE * index + tx];
-		draw_vertical_line(game, x, pxl.starty, pxl.starty + tstep, color);
+		draw_vertical_line(game, x, coords , color);
 		pxl.starty += tstep;
 	}
 }

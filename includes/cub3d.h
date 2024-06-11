@@ -6,7 +6,7 @@
 /*   By: elakhfif <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 06:16:50 by elakhfif          #+#    #+#             */
-/*   Updated: 2024/06/11 08:22:38 by elakhfif         ###   ########.fr       */
+/*   Updated: 2024/06/11 22:32:34 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ int			get_assets(t_map *map, char *line);
 void		load_assets(t_map *text);
 void		init_game(t_map *game);
 double		normalize_angle(double angle);
+void		draw_ceil_floor(t_map *game);
 t_ray		init_ray(void);
 void		init_screen(t_map *game, char *title);
 void		keybinding(t_map *game);

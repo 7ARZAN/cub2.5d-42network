@@ -6,17 +6,17 @@
 /*   By: tarzan <elakhfif@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 22:40:37 by tarzan            #+#    #+#             */
-/*   Updated: 2024/06/11 22:10:27 by elakhfif         ###   ########.fr       */
+/*   Updated: 2024/06/11 22:33:57 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 
-static void	draw_vertical_line(t_map *game, double x, double* coords, int color)
+static void	draw_vertical_line(t_map *game, double x, double *coords, int color)
 {
 	double	y;
 
-	y =  coords[0];
+	y = coords[0];
 	while (y < coords[1])
 	{
 		if (y > 0 && y < WINDOW_Y)
@@ -57,27 +57,8 @@ static void	draw_with_texture_mapping(t_map *game, t_ray ray, int x, t_pxl pxl)
 		coords[0] = pxl.starty;
 		coords[1] = pxl.starty + tstep;
 		color = game->texture_pixels[BLOCK_SIZE * index + tx];
-		draw_vertical_line(game, x, coords , color);
+		draw_vertical_line(game, x, coords, color);
 		pxl.starty += tstep;
-	}
-}
-
-void	draw_ceil_floor(t_map *game)
-{
-	int	i;
-	int	index;
-
-	i = -1;
-	while (++i < WINDOW_Y)
-	{
-		index = -1;
-		while (++index < WINDOW_X)
-		{
-			if (i < (WINDOW_Y / 2))
-				mlx_put_pixel(game->img, index, i, game->colors[1] | 0xff);
-			else
-				mlx_put_pixel(game->img, index, i, game->colors[0] | 0xff);
-		}
 	}
 }
 

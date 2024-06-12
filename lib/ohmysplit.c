@@ -6,7 +6,7 @@
 /*   By: elakhfif <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 07:23:39 by elakhfif          #+#    #+#             */
-/*   Updated: 2024/06/11 07:23:45 by elakhfif         ###   ########.fr       */
+/*   Updated: 2024/06/12 01:33:06 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,4 +58,3 @@ char	**ohmysplit(char const *s, char sep)
 	split[i] = 0;
 	return (split);
 }
-

@@ -6,7 +6,7 @@
 /*   By: tarzan <elakhfif@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 01:47:24 by tarzan            #+#    #+#             */
-/*   Updated: 2024/06/11 01:47:36 by tarzan           ###   ########.fr       */
+/*   Updated: 2024/06/12 01:38:44 by zbabahmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,6 @@ char	*ft_strrchr(const char *s, int c);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 double	deg2rad(double deg);
 double	euclidean_mod(double a, double b);
-int	ft_atoi(const char *str);
+int		ft_atoi(const char *str);
 
 #endif

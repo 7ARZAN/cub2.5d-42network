@@ -6,7 +6,7 @@
 /*   By: elakhfif <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 07:15:10 by elakhfif          #+#    #+#             */
-/*   Updated: 2024/06/11 07:24:29 by elakhfif         ###   ########.fr       */
+/*   Updated: 2024/06/12 01:43:48 by zbabahmi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 double	euclidean_mod(double a, double b)
 {
-	double res;
+	double	res;
 
 	res = a - b * floor(a / b);
 	return (res);

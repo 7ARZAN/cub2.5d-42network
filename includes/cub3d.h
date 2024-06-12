@@ -6,7 +6,7 @@
 /*   By: elakhfif <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 06:16:50 by elakhfif          #+#    #+#             */
-/*   Updated: 2024/06/11 23:15:03 by elakhfif         ###   ########.fr       */
+/*   Updated: 2024/06/12 01:13:33 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 # define WINDOW_X 1200
 # define WINDOW_Y 800
 # define FOV 60
-# define ROTATION_SPEED 1.4f
-# define PLAYER_SPEED 2.0f
-# define WALL_MARGIN 5
+# define ROTATION_SPEED 1.0f
+# define PLAYER_SPEED 1.0f
+# define WALL_MARGIN 8
 
 bool		check_inters(t_map *game, t_ray *ray);
 char		*north_texture(char *line);

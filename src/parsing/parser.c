@@ -6,7 +6,7 @@
 /*   By: tarzan <elakhfif@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 01:28:19 by tarzan            #+#    #+#             */
-/*   Updated: 2024/06/11 02:09:02 by tarzan           ###   ########.fr       */
+/*   Updated: 2024/06/11 23:18:21 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_map	*parser(int ac, char **av)
 	int		skipped;
 
 	if (check_file(ac, av) == -1)
-		exit(1);
+		exit(EXIT_FAILURE);
 	map = (t_map *)malloc(sizeof(t_map));
 	lerrx(map != NULL, "Cant allocate map struct, increase the program break");
 	skipped = get_assets(map, av[1]);

@@ -6,7 +6,7 @@
 /*   By: elakhfif <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 06:10:15 by elakhfif          #+#    #+#             */
-/*   Updated: 2024/06/11 07:40:43 by elakhfif         ###   ########.fr       */
+/*   Updated: 2024/06/12 01:20:20 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,15 @@ void	extract_assets(char *line, t_map *cub)
 {
 	if (ft_strncmp(line, "NO", 2) == 0)
 		cub->ident[0] = north_texture(line);
-	else if (ft_strncmp(line, "SO", 2) == 0)
+	if (ft_strncmp(line, "SO", 2) == 0)
 		cub->ident[1] = south_texture(line);
-	else if (ft_strncmp(line, "WE", 2) == 0)
+	if (ft_strncmp(line, "WE", 2) == 0)
 		cub->ident[2] = west_texture(line);
-	else if (ft_strncmp(line, "EA", 2) == 0)
+	if (ft_strncmp(line, "EA", 2) == 0)
 		cub->ident[3] = east_texture(line);
-	else if (ft_strncmp(line, "F", 1) == 0)
+	if (ft_strncmp(line, "F", 1) == 0)
 		cub->colors[0] = floor_color(line);
-	else if (ft_strncmp(line, "C", 1) == 0)
+	if (ft_strncmp(line, "C", 1) == 0)
 		cub->colors[1] = ceiling_color(line);
 }
 
@@ -90,6 +90,10 @@ void	load_assets(t_map *text)
 	text->textures[1] = mlx_load_png(text->ident[1]);
 	text->textures[2] = mlx_load_png(text->ident[2]);
 	text->textures[3] = mlx_load_png(text->ident[3]);
+	free(text->ident[0]);
+	free(text->ident[1]);
+	free(text->ident[2]);
+	free(text->ident[3]);
 	if (text->textures[0] == NULL || text->textures[1] == NULL
 		|| text->textures[2] == NULL || text->textures[3] == NULL)
 	{
@@ -97,6 +101,5 @@ void	load_assets(t_map *text)
 		exit(EXIT_FAILURE);
 	}
 	text->texture_pixels = ft_calloc(4, sizeof(unsigned int *));
-	while (++i < 4)
-		text->texture_pixels = convert_tex_to_px(text->textures[i]);
+	text->texture_pixels = convert_tex_to_px(text->textures[0]);
 }

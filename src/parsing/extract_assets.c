@@ -6,7 +6,7 @@
 /*   By: elakhfif <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 06:10:15 by elakhfif          #+#    #+#             */
-/*   Updated: 2024/06/12 01:20:20 by elakhfif         ###   ########.fr       */
+/*   Updated: 2024/06/12 02:36:11 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ int	get_assets(t_map *cub, char *filename)
 		line = gnl(fd);
 		i++;
 	}
+	free(line);
 	return (i);
 }
 

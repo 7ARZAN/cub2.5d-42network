@@ -6,7 +6,7 @@
 /*   By: tarzan <elakhfif@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 23:39:56 by tarzan            #+#    #+#             */
-/*   Updated: 2024/06/12 01:29:34 by elakhfif         ###   ########.fr       */
+/*   Updated: 2024/06/12 02:35:22 by elakhfif         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,6 @@ t_ray	vertical_intercept(t_map *game, double fov, t_ray player)
 	}
 	ray_looks(&ray, game, fov);
 	dmax = game->map_x * game->map_y;
-	if (fov == 90.0 || fov == 270.0)
-		dmax = game->map_x;
 	if (ray.looks[3])
 	{
 		ray.ray_x = floor(player.ray_x / BLOCK_SIZE) * BLOCK_SIZE - 0.001;
@@ -75,8 +73,6 @@ t_ray	horizontal_intercept(t_map *game, double fov, t_ray player)
 	}
 	ray_looks(&ray, game, fov);
 	dmax = game->map_y;
-	if (fov == 0.0 || fov == 180.0 || fov == 360.0)
-		dmax = 0;
 	if (ray.looks[1])
 	{
 		ray.ray_y = floor(player.ray_y / BLOCK_SIZE) * BLOCK_SIZE - 0.001;

@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-CFLAGS = -Wformat=2  -flto -ffast-math -pedantic -Wunreachable-code -Wfloat-equal -Warray-bounds -ggdb -O3
+CFLAGS = -Wall -Wextra -Werror -Wformat=2  -flto -ffast-math -pedantic -Wunreachable-code -Wfloat-equal -Warray-bounds -O3
 
 OS := $(shell uname -s)
 

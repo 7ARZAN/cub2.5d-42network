@@ -65,8 +65,8 @@ int	get_assets(t_map *cub, char *filename)
 
 unsigned int	*convert_tex_to_px(mlx_texture_t *tex)
 {
-	int				x;
-	int				y;
+	u_int16_t			x;
+	u_int16_t			y;
 	unsigned int	*pixels;
 
 	x = 0;

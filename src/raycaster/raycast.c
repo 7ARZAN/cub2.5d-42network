@@ -26,6 +26,7 @@ static void	normalize_ray(t_ray *ray, t_map *game)
 
 static void	ray_looks(t_ray *ray, t_map *game, double fov)
 {
+	(void)game;
 	ray->looks[1] = (fov > 0.0 && fov < 180.0);
 	ray->looks[0] = !ray->looks[1];
 	ray->looks[3] = (fov > 90.0 && fov < 270.0);
